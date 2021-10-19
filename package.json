@@ -3,24 +3,12 @@
     "type": "module",
     "version": "0.0.0",
     "description": "Capture text fragments based on regular expressions that are executed for each line of the text",
-    "main": "./module.cjs",
-    "module": "./src/module.js",
-    "types": "./module.d.ts",
-    "exports": {
-        ".": {
-            "import": "./src/module.js",
-            "require": "./module.cjs"
-        }
-    },
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
-        "types": "tsc",
-        "build": "rollup -c",
-        "dev": "rollup -c -w",
-        "test": "ava",
-        "prepare": "npm run test && npm run build && npm run types"
+        "exports": "exports 'src/*.js' --ignore-build --types --exports",
+        "test": "ava"
     },
     "repository": {
         "type": "git",
@@ -34,8 +22,7 @@
     "homepage": "https://github.com/UpperCod/pkg_name#readme",
     "devDependencies": {
         "ava": "^3.10.1",
-        "rollup": "^2.21.0",
-        "typescript": "^4.2.4"
+        "@atomico/exports": "^0.20.0"
     },
     "ava": {
         "files": [
@@ -45,5 +32,6 @@
     "prettier": {
         "tabWidth": 4,
         "singleQuote": false
-    }
+    },
+    "dependencies": {}
 }
