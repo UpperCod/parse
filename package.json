@@ -34,5 +34,15 @@
     "prettier": {
         "tabWidth": 4,
         "singleQuote": false
+    },
+    "exports": {
+        "./parse-css-params": "./src/parse-css-params.js"
+    },
+    "typesVersions": {
+        "*": {
+            "parse-css-params": [
+                "./types/parse-css-params.d.ts"
+            ]
+        }
     }
 }

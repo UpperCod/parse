@@ -1,9 +1,9 @@
 import test from "ava";
-import { parseParams } from "../src/parse-params.js";
+import { parseCssParams } from "../src/parse-css-params.js";
 
-test("parseParams", async (t) => {
+test("parseCssParams", async (t) => {
     t.deepEqual(
-        parseParams(
+        parseCssParams(
             "var(a,var(b)) url('../my-image-a.jpg','../my-image-a.jpg')"
         ),
         [
