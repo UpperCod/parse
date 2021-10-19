@@ -7,7 +7,7 @@
  * @param {string} input
  * @returns {[string,string[]][]}
  */
-export function parseParams(input) {
+export function parseCssParams(input) {
     input = input.replace(/\s+/g, " ") + " ";
 
     let group = [];

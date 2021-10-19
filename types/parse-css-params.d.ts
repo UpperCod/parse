@@ -7,4 +7,4 @@
  * @param {string} input
  * @returns {[string,string[]][]}
  */
-export function parseParams(input: string): [string, string[]][];
+export function parseCssParams(input: string): [string, string[]][];
