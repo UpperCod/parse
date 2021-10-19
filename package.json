@@ -1,14 +1,15 @@
 {
-    "name": "pkg_name",
+    "name": "@uppercod/parse",
     "type": "module",
     "version": "0.0.0",
-    "description": "Capture text fragments based on regular expressions that are executed for each line of the text",
+    "description": "utilities for text analysis",
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
-        "exports": "exports 'src/*.js' --ignore-build --types --exports",
-        "test": "ava"
+        "exports": "exports \"src/*.js\" --ignore-build --types --exports",
+        "test": "ava",
+        "prepare": "npm run exports && npm run test"
     },
     "repository": {
         "type": "git",
@@ -21,8 +22,9 @@
     },
     "homepage": "https://github.com/UpperCod/pkg_name#readme",
     "devDependencies": {
+        "@atomico/exports": "^0.20.0",
         "ava": "^3.10.1",
-        "@atomico/exports": "^0.20.0"
+        "typescript": "^4.4.4"
     },
     "ava": {
         "files": [
@@ -32,6 +34,5 @@
     "prettier": {
         "tabWidth": 4,
         "singleQuote": false
-    },
-    "dependencies": {}
+    }
 }

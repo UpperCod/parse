@@ -1,9 +1,24 @@
-# pkg_name
+# @uppercod/parse
 
-bla bla....
+utilities for text analysis
 
-## install
+## parse-css-params
 
+Capture the parameters using the css parameter syntax, example:
+
+```js
+import { parseCssParams } from "@uppercod/parse/parse-css-params";
+
+parseCssParams(`var(--z, var(--x)) url("background.jpg")`);
 ```
-npm install pkg_name
+
+**Output**
+
+```json
+[
+    [
+        ["var", ["--z", "var(--x)"]],
+        ["url", ["background.jpg"]]
+    ]
+]
 ```
