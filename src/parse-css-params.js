@@ -19,7 +19,8 @@ export function parseCssParams(input) {
     let params;
     let lastQuote;
 
-    const addParams = (param) => params && params.push(param.trim());
+    const addParams = (param) =>
+        params && params.push(param.trim() || undefined);
 
     const addUtil = (word, params) => group.push([word, params]);
 
