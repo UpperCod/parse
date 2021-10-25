@@ -18,5 +18,5 @@ export function createParseCssTokens({ prefix, tokens }: {
 export type Tokens = {
     title: string;
     type?: string | undefined;
-    children: [string, string][];
+    children: [string, string, (string | undefined)][];
 };
