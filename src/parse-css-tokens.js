@@ -2,7 +2,7 @@
  * @typedef {Object} Tokens
  * @property {string} title
  * @property {string} [type]
- * @property {[string,string][]} children
+ * @property {[string,string,(string|undefined)][]} children
  */
 
 /**
@@ -21,7 +21,7 @@ export const createParseCssTokens = ({ prefix, tokens = {} }) => ({
         let id;
         let cssProps = "";
         let text = raw.join("");
-
+        let nextProp = "";
         text.replace(
             /\s*(@){0,1}([^:]+)\s*:\s*([^;]+);/g,
             (part, meta, prop, value) => {
@@ -32,11 +32,16 @@ export const createParseCssTokens = ({ prefix, tokens = {} }) => ({
                         children: [],
                     };
                     if (meta) {
-                        tokens[id][prop] = value;
+                        if (prop == "prop") {
+                            nextProp = value;
+                        } else {
+                            tokens[id][prop] = value;
+                        }
                     } else {
                         const global = `--${prefix}${prop}`;
                         cssProps += `--${prop}: var(${global}, ${value});\n`;
-                        tokens[id].children.push([global, value]);
+                        tokens[id].children.push([global, value, nextProp]);
+                        nextProp = "";
                     }
                 }
             }

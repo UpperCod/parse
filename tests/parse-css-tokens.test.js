@@ -8,6 +8,7 @@ test("createParseCssTokens", async (t) => {
     @title: Tokens;
     @description: Bla bla bla...;
     primary: orange;
+    @prop: The black!;
     secondary: black;`;
 
     t.is(
@@ -22,8 +23,8 @@ test("createParseCssTokens", async (t) => {
         {
             Tokens: {
                 children: [
-                    ["--prefix--primary", "orange"],
-                    ["--prefix--secondary", "black"],
+                    ["--prefix--primary", "orange", ""],
+                    ["--prefix--secondary", "black", "The black!"],
                 ],
                 title: "Tokens",
                 description: "Bla bla bla...",
