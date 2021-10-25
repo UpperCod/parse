@@ -36,12 +36,16 @@
         "singleQuote": false
     },
     "exports": {
-        "./parse-css-params": "./src/parse-css-params.js"
+        "./parse-css-params": "./src/parse-css-params.js",
+        "./parse-css-tokens": "./src/parse-css-tokens.js"
     },
     "typesVersions": {
         "*": {
             "parse-css-params": [
                 "./types/parse-css-params.d.ts"
+            ],
+            "parse-css-tokens": [
+                "./types/parse-css-tokens.d.ts"
             ]
         }
     }
