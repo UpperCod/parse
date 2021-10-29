@@ -23,8 +23,8 @@ test("createParseCssTokens", async (t) => {
         {
             Tokens: {
                 children: [
-                    ["--prefix--primary", "orange", ""],
-                    ["--prefix--secondary", "black", "The black!"],
+                    ["--prefix--primary", "orange", "primary", ""],
+                    ["--prefix--secondary", "black", "secondary", "The black!"],
                 ],
                 title: "Tokens",
                 description: "Bla bla bla...",

@@ -2,7 +2,7 @@
  * @typedef {Object} Tokens
  * @property {string} title
  * @property {string} [type]
- * @property {[string,string,(string|undefined)][]} children
+ * @property {[string,string,string,(string|undefined)][]} children
  */
 
 /**
@@ -40,7 +40,12 @@ export const createParseCssTokens = ({ prefix, tokens = {} }) => ({
                     } else {
                         const global = `--${prefix}${prop}`;
                         cssProps += `--${prop}: var(${global}, ${value});\n`;
-                        tokens[id].children.push([global, value, nextProp]);
+                        tokens[id].children.push([
+                            global,
+                            value,
+                            prop,
+                            nextProp,
+                        ]);
                         nextProp = "";
                     }
                 }
