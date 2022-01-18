@@ -1,6 +1,6 @@
 export function createParseCssTokens({ prefix, tokens }: {
     prefix: string;
-    tokens: {
+    tokens?: {
         [x: string]: Tokens & TokensUnknown;
     };
 }): {

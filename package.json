@@ -1,7 +1,7 @@
 {
     "name": "@uppercod/parse",
     "type": "module",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "description": "utilities for text analysis",
     "publishConfig": {
         "access": "public"

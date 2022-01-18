@@ -11,7 +11,7 @@
 
 /**
  *
- * @param {{prefix:string,tokens:Object<string,Tokens & TokensUnknown>}} config
+ * @param {{prefix:string,tokens?:Object<string,Tokens & TokensUnknown>}} config
  */
 export const createParseCssTokens = ({ prefix, tokens = {} }) => ({
     /**
