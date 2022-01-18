@@ -1,14 +1,14 @@
 export function createParseCssTokens({ prefix, tokens }: {
     prefix: string;
     tokens: {
-        [x: string]: Tokens;
+        [x: string]: Tokens & TokensUnknown;
     };
 }): {
     /**
-     * @type {Object<string,Tokens>}
+     * @type {Object<string,Tokens & TokensUnknown>}
      */
     tokens: {
-        [x: string]: Tokens;
+        [x: string]: Tokens & TokensUnknown;
     };
     /**
      * @param {TemplateStringsArray}
@@ -19,4 +19,7 @@ export type Tokens = {
     title: string;
     type?: string | undefined;
     children: [string, string, string, (string | undefined)][];
+};
+export type TokensUnknown = {
+    [x: string]: string;
 };

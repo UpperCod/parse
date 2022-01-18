@@ -6,12 +6,16 @@
  */
 
 /**
+ * @typedef {Object<string,string>} TokensUnknown
+ */
+
+/**
  *
- * @param {{prefix:string,tokens:Object<string,Tokens>}} config
+ * @param {{prefix:string,tokens:Object<string,Tokens & TokensUnknown>}} config
  */
 export const createParseCssTokens = ({ prefix, tokens = {} }) => ({
     /**
-     * @type {Object<string,Tokens>}
+     * @type {Object<string,Tokens & TokensUnknown>}
      */
     tokens,
     /**
